@@ -1,14 +1,16 @@
-import {createSignal} from "solid-js";
+import {createSignal, Show} from "solid-js";
 
 const Footer = () => {
-  const [isVisible, setIsVisible] = createSignal(false);
+  const [isVisible, isVisibleSet] = createSignal(false);
+
 
   return (
     <div class="footer">
-      <div class="container">
-        <h3>© Copyright Games Workshop Limited 2022.</h3>
-          <div class="rights">
-            <p>
+      <div class="container mx-auto px-6 bg-black rounded py-4">
+        <h3 onclick={() => isVisibleSet(!isVisible())} class="text-white text-xl font-bold cursor-pointer">© Copyright Games Workshop Limited 2022.</h3>
+        <Show when={isVisible()}>
+          <div class="text-white">
+            <p class="my-4">
               © Copyright Games Workshop Limited 2022. GW, Games Workshop,
               Citadel, White Dwarf, Space Marine, 40K, Warhammer, Warhammer
               40,000, the ‘Aquila’ Double-headed Eagle logo, Warhammer Age of
@@ -18,7 +20,7 @@ const Footer = () => {
               thereof, are either ® or ™, and/or © Games Workshop Limited,
               variably registered around the world. All Rights Reserved.
             </p>
-            <p>
+            <p class="my-4">
               © Warner Bros. Entertainment Inc. All rights reserved. THE HOBBIT:
               AN UNEXPECTED JOURNEY, THE HOBBIT: THE DESOLATION OF SMAUG, THE
               HOBBIT: THE BATTLE OF THE FIVE ARMIES and the names of the
@@ -26,7 +28,7 @@ const Footer = () => {
               Saul Zaentz Company d/b/a Middle-earth Enterprises under license
               to New Line Productions, Inc. (s22)
             </p>
-            <p>
+            <p class="my-4">
               © 2022 New Line Productions, Inc. All rights reserved.
               MIDDLE-EARTH, THE LORD OF THE RINGS: THE FELLOWSHIP OF THE RING,
               THE LORD OF THE RINGS: THE TWO TOWERS, THE LORD OF THE RINGS: THE
@@ -36,6 +38,7 @@ const Footer = () => {
               Inc. (s22)
             </p>
           </div>
+        </Show>
       </div>
     </div>
   )

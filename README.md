@@ -1,6 +1,7 @@
 # Warhammer Shop
 
-This is my Warhammer shop pet project. In this project I use SolidJS, CSS Modules...  
+This is my Warhammer shop pet project. 
+In this project I use SolidJS, CSS Modules, TailwindCss
 
 ## Developing
 
